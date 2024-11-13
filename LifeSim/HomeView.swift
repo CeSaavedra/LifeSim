@@ -141,7 +141,7 @@ struct HomeView: View {
     // Function loads saved game and navigates to main game UI
     func loadGame() {
         // If saved game exists
-        if let firstPlayer = players.first, let gameData = firstPlayer.gameData {
+        if let firstPlayer = players.first {
             // Navigates to GameView with specified player data
             path.append(GameView(player: firstPlayer))
             
@@ -158,7 +158,6 @@ struct HomeView: View {
         // Sets initial attributes
         newPlayer.playerName = playerName
         newPlayer.saveDate = Date()
-        newPlayer.gameData = "New Game Data"
         
         // Error Handling for nsErrors
         do {
