@@ -15,14 +15,12 @@ struct GameView: View, Hashable {
     // Initializes current game section to being in the main section
     @State private var currentSection: GameSection = .main
     @State private var showPlayerData = false
-    
     @StateObject private var blackjackScene = BlackjackScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
     
     @State private var betAmount: Int = 0
     @State private var loanMessage: String = ""
-
     
-    
+   
     var body: some View {
         VStack(spacing: 0) {
             
@@ -50,8 +48,8 @@ struct GameView: View, Hashable {
                     } else {
                         SpriteView(scene: GameScene(size: CGSize(width: 300, height: 300), playerName: player.playerName ?? "Unknown", gender: player.gender ?? "Male"))
                     }
-
                 }
+                
             }
             .frame(height: UIScreen.main.bounds.height * 0.40)
             
